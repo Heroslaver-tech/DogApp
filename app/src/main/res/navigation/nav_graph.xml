@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentA">
+
+    <fragment
+        android:id="@+id/fragmentA"
+        android:name="com.example.clase6.fragment.FragmentA"
+        android:label="FragmentA"
+        tools:layout = "@layout/fragment_a">
+        <action
+            android:id="@+id/action_fragmentA_to_fragmentB"
+            app:destination="@id/fragmentB" />
+        <action
+            android:id="@+id/action_fragmentA_to_fragmentCardView"
+            app:destination="@id/fragmentCardView" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentB"
+        android:name="com.example.clase6.fragment.FragmentB"
+        android:label="FragmentB"
+        tools:layout = "@layout/fragment_b">
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentCardView"
+        android:name="com.example.clase6.fragment.FragmentCardView"
+        android:label="FragmentCardView"
+        tools:layout = "@layout/fragment_card_view"/>
+</navigation>
