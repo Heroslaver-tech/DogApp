@@ -65,6 +65,7 @@ class FragmentA : Fragment() {
                     super.onAuthenticationSucceeded(result)
                     userNotify("Authentication exito!")
                     //Toast.makeText(this@FragmentA,"Authentication exito!", Toast.LENGTH_LONG).show()
+                    findNavController().navigate(R.id.action_fragmentA_to_fragmentB)
                 }
 
                 override fun onAuthenticationFailed() {
