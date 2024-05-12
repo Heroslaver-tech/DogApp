@@ -36,6 +36,7 @@ android {
 
     buildFeatures {
         dataBinding = true
+        viewBinding = true
     }
 }
 
@@ -57,6 +58,9 @@ dependencies {
 
     //cardView
     implementation("androidx.cardview:cardview:1.0.0")
+
+    //Biometria
+    implementation ("androidx.biometric:biometric-ktx:1.2.0-alpha04")
 
 
 }
