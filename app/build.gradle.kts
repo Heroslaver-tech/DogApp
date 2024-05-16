@@ -82,5 +82,6 @@ dependencies {
     //Biometria
     implementation ("androidx.biometric:biometric-ktx:1.2.0-alpha04")
 
+    implementation ("com.airbnb.android:lottie:6.4.0")
 
 }
