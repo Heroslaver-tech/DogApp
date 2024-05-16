@@ -1,4 +1,4 @@
-package com.example.clase6
+package com.example.project
 
 import org.junit.Test
 

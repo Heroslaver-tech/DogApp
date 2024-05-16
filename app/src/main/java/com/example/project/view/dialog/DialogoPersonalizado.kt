@@ -1,10 +1,10 @@
-package com.example.clase6.Dialogos
+package com.example.project.view.dialog
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import com.example.clase6.databinding.DialogoPersonalizadoBinding
+import com.example.project.databinding.DialogoPersonalizadoBinding
 
 class DialogoPersonalizado {
     companion object{
