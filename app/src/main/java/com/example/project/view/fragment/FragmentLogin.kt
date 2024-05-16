@@ -1,4 +1,4 @@
-package com.example.clase6.fragment
+package com.example.project.view.fragment
 
 import android.app.Activity
 import android.content.Intent
@@ -16,12 +16,11 @@ import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.clase6.R
-import com.example.clase6.databinding.ActivityMainBinding
-import com.example.clase6.databinding.FragmentABinding
+import com.example.project.R
+import com.example.project.databinding.FragmentABinding
 import java.util.concurrent.Executor
 
-class FragmentA : Fragment() {
+class FragmentLogin : Fragment() {
 
     private lateinit var binding: FragmentABinding
 
@@ -134,7 +133,7 @@ class FragmentA : Fragment() {
                 binding.imagFinger.isEnabled=false
 
                 //startActivityForResult(enrollIntent, 100)
-                val intent = Intent(requireContext(), FragmentA::class.java)
+                val intent = Intent(requireContext(), FragmentLogin::class.java)
                 mStartForResult.launch(intent)
 
             }

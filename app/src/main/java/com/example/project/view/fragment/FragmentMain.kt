@@ -1,15 +1,13 @@
-package com.example.clase6.fragment
+package com.example.project.view.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.clase6.R
-import com.example.clase6.databinding.FragmentABinding
-import com.example.clase6.databinding.FragmentBBinding
+import com.example.project.databinding.FragmentBBinding
 
-class FragmentB : Fragment() {
+class FragmentMain : Fragment() {
     private lateinit var binding: FragmentBBinding
 
     override fun onCreateView(

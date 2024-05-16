@@ -1,20 +1,10 @@
-package com.example.clase6.fragment
-import android.app.DatePickerDialog
-import android.app.TimePickerDialog
+package com.example.project.view.fragment
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.DatePicker
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import com.example.clase6.Dialogos.DialogoEstandar.Companion.showDialog
-import com.example.clase6.Dialogos.DialogoPersonalizado.Companion.showDialogPersonalizado
-import com.example.clase6.R
-import com.example.clase6.databinding.FragmentABinding
-import com.example.clase6.databinding.FragmentCardViewBinding
-import java.util.Calendar
+import com.example.project.databinding.FragmentCardViewBinding
 
 class FragmentCardView : Fragment() {
 

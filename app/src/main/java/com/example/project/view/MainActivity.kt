@@ -1,8 +1,8 @@
-package com.example.clase6
+package com.example.project.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.clase6.fragment.FragmentA
+import com.example.project.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
