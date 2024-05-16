@@ -56,6 +56,8 @@ dependencies {
     implementation ("androidx.navigation:navigation-ui-ktx:$navVersion")
     implementation("androidx.navigation:navigation-common:$navVersion")
 
+    //animations
+    implementation("com.airbnb.android:lottie:4.2.2")
     //cardView
     implementation("androidx.cardview:cardview:1.0.0")
 
