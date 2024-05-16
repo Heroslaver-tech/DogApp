@@ -13,6 +13,8 @@ import androidx.navigation.fragment.findNavController
 import com.example.project.databinding.FragmentFormBinding
 import com.example.project.model.Pet
 import com.example.project.viewmodel.PetViewModel
+import androidx.lifecycle.Observer
+import androidx.lifecycle.LifecycleOwner
 
 class FragmentForm : Fragment() {
 
@@ -23,7 +25,6 @@ class FragmentForm : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentFormBinding.inflate(inflater)
-        binding.lifecycleOwner = this
         return binding.root
     }
 

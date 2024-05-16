@@ -16,7 +16,7 @@
         app:title="Nueva Cita" />
 
     <EditText
-        android:id="@+id/etNombreMascota"
+        android:id="@+id/etName"
         android:hint="Nombre de la Mascota"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
@@ -33,7 +33,7 @@
 
 
     <EditText
-        android:id="@+id/etRazaMascota"
+        android:id="@+id/etRace"
         android:layout_width="223dp"
         android:layout_height="53dp"
         android:layout_marginStart="108dp"
@@ -44,11 +44,11 @@
         android:padding="16dp"
         android:textColor="@android:color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etNombreMascota"
+        app:layout_constraintTop_toBottomOf="@id/etName"
         app:theme="@style/AppTheme.InputField" />
 
     <EditText
-        android:id="@+id/etNombrePropietario"
+        android:id="@+id/etNamePerson"
         android:layout_width="223dp"
         android:layout_height="59dp"
         android:layout_marginStart="108dp"
@@ -60,11 +60,11 @@
         android:padding="16dp"
         android:textColor="@android:color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etRazaMascota"
+        app:layout_constraintTop_toBottomOf="@id/etRace"
         app:theme="@style/AppTheme.InputField" />
 
     <EditText
-        android:id="@+id/etTelefonoPropietario"
+        android:id="@+id/etTel"
         android:layout_width="225dp"
         android:layout_height="56dp"
         android:layout_marginStart="108dp"
@@ -76,21 +76,21 @@
         android:padding="16dp"
         android:textColor="@android:color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etNombrePropietario"
+        app:layout_constraintTop_toBottomOf="@id/etNamePerson"
         app:theme="@style/AppTheme.InputField" />
 
     <Spinner
-        android:id="@+id/spSintomas"
+        android:id="@+id/spSymptom"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="108dp"
         android:layout_marginTop="24dp"
         android:entries="@array/sintomas"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etTelefonoPropietario" />
+        app:layout_constraintTop_toBottomOf="@id/etTel" />
 
     <Button
-        android:id="@+id/btnGuardar"
+        android:id="@+id/btnSavePet"
         android:layout_width="347dp"
         android:layout_height="58dp"
         android:layout_marginStart="16dp"
@@ -102,7 +102,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etRazaMascota" />
+        app:layout_constraintTop_toBottomOf="@id/spSymptom" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
