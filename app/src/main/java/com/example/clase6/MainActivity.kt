@@ -2,6 +2,8 @@ package com.example.clase6
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.content.Intent
+import androidx.navigation.findNavController
 import com.example.clase6.fragment.FragmentA
 
 class MainActivity : AppCompatActivity() {
@@ -24,6 +26,21 @@ class MainActivity : AppCompatActivity() {
 //            .commit()
 //    }
 
+    override fun onBackPressed() {
+        // Obtener el ID del fragmento actual
+        val currentDestination = findNavController(R.id.navigationContainer).currentDestination?.id
 
+        // Verificar si el fragmento actual es FragmentB
+        if (currentDestination == R.id.fragmentB) {
+            // Por ejemplo, puedes utilizar un Intent para abrir la pantalla de inicio (launcher) del dispositivo
+            val intent = Intent(Intent.ACTION_MAIN)
+            intent.addCategory(Intent.CATEGORY_HOME)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            startActivity(intent)
+        } else {
+            // Si el fragmento actual no es FragmentB, dejar que el comportamiento predeterminado del botón de retroceso funcione
+            super.onBackPressed()
+        }
+    }
 
 }

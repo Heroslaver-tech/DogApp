@@ -27,9 +27,10 @@ class FragmentB : Fragment() {
     }
 
     private fun capturarData(){
-
         val textView = binding.tvData
         val dataFragmentA = arguments?.getString("clave")
         textView.text =dataFragmentA
     }
+
+
 }
