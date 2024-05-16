@@ -3,29 +3,54 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/fragmentA">
+    app:startDestination="@id/fragmentLogin">
 
     <fragment
-        android:id="@+id/fragmentA"
-        android:name="com.example.clase6.fragment.FragmentA"
-        android:label="FragmentA"
-        tools:layout = "@layout/fragment_a">
+        android:id="@+id/fragmentLogin"
+        android:name="com.example.project.view.fragment.FragmentLogin"
+        android:label="FragmentLogin"
+        tools:layout = "@layout/fragment_login">
         <action
-            android:id="@+id/action_fragmentA_to_fragmentB"
-            app:destination="@id/fragmentB" />
+            android:id="@+id/action_fragmentLogin_to_fragmentMain"
+            app:destination="@id/fragmentMain" />
     </fragment>
     <fragment
-        android:id="@+id/fragmentB"
-        android:name="com.example.clase6.fragment.FragmentB"
-        android:label="FragmentB"
-        tools:layout = "@layout/fragment_b">
+        android:id="@+id/fragmentMain"
+        android:name="com.example.project.view.fragment.FragmentMain"
+        android:label="FragmentMain"
+        tools:layout = "@layout/fragment_main">
         <action
-            android:id="@+id/action_fragmentB_to_fragmentCardView"
-            app:destination="@id/fragmentCardView" />
+            android:id="@+id/action_fragmentMain_to_fragmentForm"
+            app:destination="@id/fragmentForm" />
+        <action
+            android:id="@+id/action_fragmentMain_to_fragmentDetails"
+            app:destination="@id/fragmentDetails"/>
     </fragment>
     <fragment
-        android:id="@+id/fragmentCardView"
-        android:name="com.example.clase6.fragment.FragmentCardView"
-        android:label="FragmentCardView"
-        tools:layout = "@layout/fragment_card_view"/>
+        android:id="@+id/fragmentForm"
+        android:name="com.example.project.view.fragment.FragmentForm"
+        android:label="FragmentForm"
+        tools:layout = "@layout/fragment_form"/>
+    <fragment
+        android:id="@+id/fragmentDetails"
+        android:name="com.example.project.view.fragment.FragmentDetails"
+        android:label="FragmentDetails"
+        tools:layout = "@layout/fragment_details">
+        <action
+            android:id="@+id/action_fragmentDetails_to_fragmentEdit"
+            app:destination="@id/fragmentEdit" />
+        <action
+            android:id="@+id/action_fragmentDetails_to_fragmentMain"
+            app:destination="@id/fragmentMain" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentEdit"
+        android:name="com.example.project.view.fragment.FragmentEdit"
+        android:label="fragmentEdit"
+        tools:layout="@layout/fragment_edit">
+        <action
+            android:id="@+id/action_fragmentEdit_to_fragmentMain"
+            app:destination="@id/fragmentMain" />
+    </fragment>
 </navigation>

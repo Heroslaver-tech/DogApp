@@ -1,4 +1,4 @@
-package com.example.clase6.fragment
+package com.example.project.view.fragment
 
 import android.app.Activity
 import android.content.Intent
@@ -16,14 +16,13 @@ import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.clase6.R
-import com.example.clase6.databinding.ActivityMainBinding
-import com.example.clase6.databinding.FragmentABinding
+import com.example.project.R
+import com.example.project.databinding.FragmentLoginBinding
 import java.util.concurrent.Executor
 
-class FragmentA : Fragment() {
+class FragmentLogin : Fragment() {
 
-    private lateinit var binding: FragmentABinding
+    private lateinit var binding: FragmentLoginBinding
 
     //lateinit var binding: ActivityMainBinding
     lateinit var info: String
@@ -35,7 +34,7 @@ class FragmentA : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentABinding.inflate(inflater)
+        binding = FragmentLoginBinding.inflate(inflater)
         binding.imagFinger.setOnClickListener {
             checkDeviceHasBiometric()
         }
@@ -63,9 +62,9 @@ class FragmentA : Fragment() {
 
                 override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
                     super.onAuthenticationSucceeded(result)
-                    userNotify("Authentication exito!")
-                    //Toast.makeText(this@FragmentA,"Authentication exito!", Toast.LENGTH_LONG).show()
-                    findNavController().navigate(R.id.action_fragmentA_to_fragmentB)
+                    userNotify("Authentication successful!")
+                    //Toast.makeText(this@FragmentA,"Authentication successful!", Toast.LENGTH_LONG).show()
+                    findNavController().navigate(R.id.action_fragmentLogin_to_fragmentMain)
                 }
 
                 override fun onAuthenticationFailed() {
@@ -134,7 +133,7 @@ class FragmentA : Fragment() {
                 binding.imagFinger.isEnabled=false
 
                 //startActivityForResult(enrollIntent, 100)
-                val intent = Intent(requireContext(), FragmentA::class.java)
+                val intent = Intent(requireContext(), FragmentLogin::class.java)
                 mStartForResult.launch(intent)
 
             }
