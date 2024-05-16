@@ -17,12 +17,12 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.project.R
-import com.example.project.databinding.FragmentABinding
+import com.example.project.databinding.FragmentLoginBinding
 import java.util.concurrent.Executor
 
 class FragmentLogin : Fragment() {
 
-    private lateinit var binding: FragmentABinding
+    private lateinit var binding: FragmentLoginBinding
 
     //lateinit var binding: ActivityMainBinding
     lateinit var info: String
@@ -34,7 +34,7 @@ class FragmentLogin : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentABinding.inflate(inflater)
+        binding = FragmentLoginBinding.inflate(inflater)
         binding.imagFinger.setOnClickListener {
             checkDeviceHasBiometric()
         }
@@ -62,9 +62,9 @@ class FragmentLogin : Fragment() {
 
                 override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
                     super.onAuthenticationSucceeded(result)
-                    userNotify("Authentication exito!")
-                    //Toast.makeText(this@FragmentA,"Authentication exito!", Toast.LENGTH_LONG).show()
-                    findNavController().navigate(R.id.action_fragmentA_to_fragmentCardView)
+                    userNotify("Authentication successful!")
+                    //Toast.makeText(this@FragmentA,"Authentication successful!", Toast.LENGTH_LONG).show()
+                    findNavController().navigate(R.id.action_fragmentLogin_to_fragmentMain)
                 }
 
                 override fun onAuthenticationFailed() {
