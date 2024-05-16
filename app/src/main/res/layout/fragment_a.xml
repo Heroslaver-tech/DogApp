@@ -11,6 +11,7 @@
 
 
         <ImageView
+            android:contentDescription="@string/content"
             android:id="@+id/dog_image"
             android:layout_width="460dp"
             android:layout_height="821dp"
@@ -39,7 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/Lilita"
-            android:text="DogApp"
+            android:text="@string/app_name"
             android:textColor="@color/white"
             android:textSize="80sp"
             app:layout_constraintEnd_toEndOf="parent"
