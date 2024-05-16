@@ -13,15 +13,15 @@
         <action
             android:id="@+id/action_fragmentA_to_fragmentB"
             app:destination="@id/fragmentB" />
-        <action
-            android:id="@+id/action_fragmentA_to_fragmentCardView"
-            app:destination="@id/fragmentCardView" />
     </fragment>
     <fragment
         android:id="@+id/fragmentB"
         android:name="com.example.project.view.fragment.FragmentMain"
         android:label="FragmentB"
         tools:layout = "@layout/fragment_b">
+        <action
+            android:id="@+id/action_fragmentB_to_fragmentCardView"
+            app:destination="@id/fragmentCardView" />
     </fragment>
     <fragment
         android:id="@+id/fragmentCardView"
