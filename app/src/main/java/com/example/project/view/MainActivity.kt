@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.example.project.R
 import android.content.Intent
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 
 
 class MainActivity : AppCompatActivity() {
