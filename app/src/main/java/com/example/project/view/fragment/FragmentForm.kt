@@ -15,6 +15,12 @@ import com.example.project.model.Pet
 import com.example.project.viewmodel.PetViewModel
 import androidx.lifecycle.Observer
 import androidx.lifecycle.LifecycleOwner
+import com.example.project.webservices.RetrofitClient
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 
 class FragmentForm : Fragment() {
 
@@ -84,5 +90,46 @@ class FragmentForm : Fragment() {
             }
         }
     }
+
+
+    private fun obtenerRazasDePerro() {
+        val retroftiTraer = RetrofitClient.consumirApi.getTraer()
+
+        retroftiTraer.enqueue(object : Callback<Raza> {
+            override fun onResponse(call: Call<Raza>, response: Response<Raza>) {
+                val razas = response.body()?.message
+
+                if (razas != null) {
+                    mostrarRazasEnTextView(razas)
+                } else {
+                    showToast("No se encontraron razas")
+                }
+            }
+
+            override fun onFailure(call: Call<Raza>, t: Throwable) {
+                showToast("Error al consultar Api Rest")
+            }
+        })
+    }
+
+
+    private fun mostrarRazasEnTextView(razas: String) {
+        val properties = razas::class.java.declaredFields
+        val keysList = mutableListOf<String>()
+
+        for (property in properties) {
+            property.isAccessible = true
+            val propertyName = property.name
+            if (property.type == List::class.java) {
+                keysList.add(propertyName)
+            }
+        }
+
+        val razasString = keysList.joinToString(separator = "\n")
+
+        // Mostrar el listado de razas en el TextView
+        binding.tvMostrar.text = razasString
+    }
+
 
 }
