@@ -76,6 +76,9 @@ dependencies {
     implementation ("androidx.room:room-ktx:2.5.2")
     ksp("androidx.room:room-compiler:2.5.2")
 
+    //animations
+    implementation("com.airbnb.android:lottie:4.2.2")
+    
     //cardView
     implementation("androidx.cardview:cardview:1.0.0")
 
