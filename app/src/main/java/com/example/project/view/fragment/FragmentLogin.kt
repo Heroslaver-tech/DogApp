@@ -36,6 +36,7 @@ class FragmentLogin : Fragment() {
     ): View? {
         binding = FragmentLoginBinding.inflate(inflater)
         binding.imagFinger.setOnClickListener {
+            //findNavController().navigate(R.id.action_fragmentLogin_to_fragmentMain)
             checkDeviceHasBiometric()
         }
         binding.lifecycleOwner = this
@@ -69,14 +70,14 @@ class FragmentLogin : Fragment() {
 
                 override fun onAuthenticationFailed() {
                     super.onAuthenticationFailed()
-                    userNotify("Authentication failed")
+                    userNotify("Authentication fallò")
                     //Toast.makeText(this@FragmentA,"Authentication failed", Toast.LENGTH_LONG).show()
                 }
             })
 
 
         promptInfo = BiometricPrompt.PromptInfo.Builder()
-            .setTitle("Autenticaciòn con Biometria")
+            .setTitle("Autenticacion con Biometria")
             .setSubtitle("ingrese su huella digital aqui")
             .setNegativeButtonText("Cancelar")
             .build()

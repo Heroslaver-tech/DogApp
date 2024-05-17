@@ -10,11 +10,12 @@ import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.example.project.databinding.FragmentFormBinding
 import com.example.project.model.Pet
 import com.example.project.viewmodel.PetViewModel
 import androidx.lifecycle.Observer
 import androidx.lifecycle.LifecycleOwner
+import com.example.project.databinding.FragmentFormBinding
+
 
 class FragmentForm : Fragment() {
 
@@ -42,7 +43,8 @@ class FragmentForm : Fragment() {
 
 
     }
-    private fun savePet(){
+
+    private fun savePet() {
         val name = binding.etName.text.toString()
         val race = binding.etRace.text.toString()
         val namePerson = binding.etNamePerson.text.toString()
@@ -51,31 +53,39 @@ class FragmentForm : Fragment() {
         val selectedPosition = binding.spSymptom.selectedItemPosition
         // Obtener el valor del elemento seleccionado utilizando el índice
         val symptom = binding.spSymptom.getItemAtPosition(selectedPosition).toString()
-        val newPet = Pet(name = name, race = race, namePerson = namePerson, tel = tel, symptom = symptom)
+        val newPet =
+            Pet(name = name, race = race, namePerson = namePerson, tel = tel, symptom = symptom)
         petViewModel.savePet(newPet)
-        Log.d("test",newPet.toString())
-        Toast.makeText(context,"Artículo guardado !!", Toast.LENGTH_SHORT).show()
+        Log.d("test", newPet.toString())
+        Toast.makeText(context, "Artículo guardado !!", Toast.LENGTH_SHORT).show()
         findNavController().popBackStack()
 
     }
 
     //Verifica que los datos se hayan llenado antes de mandar
     private fun validarDatos() {
-        val listEditText = listOf(binding.etName, binding.etRace, binding.etNamePerson, binding.etTel)
-        val spinner = binding.spSymptom // suponiendo que spinner es tu Spinner
+        val listTextInputEditText =
+            listOf(binding.etName, binding.etRace, binding.etNamePerson, binding.etTel)
+        val spinner = binding.spSymptom
 
-        // Verifica solo los editText
-        listEditText.forEach { editText ->
-            editText.addTextChangedListener {
-                val isListFull = listEditText.all { it.text.isNotEmpty() } && spinner.selectedItemPosition != 0
+        // Verifica TextInputEditText
+        listTextInputEditText.forEach { textInputEditText ->
+            textInputEditText.addTextChangedListener { editable ->
+                val isListFull =
+                    listTextInputEditText.all { it.text?.isNotEmpty() == true } && spinner.selectedItemPosition != 0
                 binding.btnSavePet.isEnabled = isListFull
             }
         }
 
         //Verifica el spinner
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                val isListFull = listEditText.all { it.text.isNotEmpty() } && position != 0
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                val isListFull = listTextInputEditText.all { it.text?.isNotEmpty() == true } && position != 0
                 binding.btnSavePet.isEnabled = isListFull
             }
 
@@ -84,5 +94,4 @@ class FragmentForm : Fragment() {
             }
         }
     }
-
 }
