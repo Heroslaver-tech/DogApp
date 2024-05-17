@@ -11,8 +11,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        tools:context=".fragment.FragmentMain"
-        android:background="#FFF5FA">
+        android:background="@color/backgroundMain"
+        tools:context=".fragment.FragmentMain">
 
         <!-- TODO: Update blank fragment layout -->
 

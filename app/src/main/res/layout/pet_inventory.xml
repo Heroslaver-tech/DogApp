@@ -6,6 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="20dp"
+        android:backgroundTint="@color/white"
         android:paddingVertical="5dp">
 
         <androidx.cardview.widget.CardView
@@ -41,7 +42,7 @@
                     android:id="@+id/tvName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="96dp"
+                    android:layout_marginStart="80dp"
                     android:padding="5dp"
                     android:text="Nombre"
                     android:textSize="18sp"
@@ -66,10 +67,10 @@
                     android:id="@+id/tvSymptom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="96dp"
+                    android:layout_marginStart="80dp"
                     android:padding="6dp"
                     android:text="sintoma"
-                    android:textSize="16sp"
+                    android:textSize="13sp"
                     card_view:layout_constraintStart_toStartOf="parent"
                     card_view:layout_constraintTop_toBottomOf="@+id/tvName" />
 

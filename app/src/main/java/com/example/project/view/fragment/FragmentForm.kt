@@ -89,6 +89,7 @@ class FragmentForm : Fragment() {
             }
         }
 
+
         //Verifica el spinner
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(

@@ -7,5 +7,6 @@
     <color name="saveButtonColor">#F05861</color>
     <color name="pink">#F05861</color>
     <color name="background">#1E282D</color>
+    <color name="backgroundMain">#fff4fc</color>
     <color name="backgroundColorItem">#FF33EC</color>
 </resources>

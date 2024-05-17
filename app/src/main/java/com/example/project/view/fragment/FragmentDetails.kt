@@ -21,6 +21,12 @@ class FragmentDetails : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+//        // Obtener referencia al ConstraintLayout padre
+//        val parentLayout = binding.parentLayout
+//
+//        // Traer ivPetDetails al frente
+//        parentLayout.bringChildToFront(binding.ivPetDetails)
+
         binding = FragmentDetailsBinding.inflate(inflater)
         binding.lifecycleOwner = this
         return binding.root
@@ -51,7 +57,7 @@ class FragmentDetails : Fragment() {
         binding.tvSymptomEdit.text = "${receivedPet.symptom}"
         binding.tvnamePersonEdit.text = "${receivedPet.namePerson}"
         binding.tvTelEdit.text = receivedPet.tel.toString()
-        binding.tvIdEdit.text = receivedPet.id.toString()
+        binding.tvIdEdit.text = "#${receivedPet.id}"
 
     }
 

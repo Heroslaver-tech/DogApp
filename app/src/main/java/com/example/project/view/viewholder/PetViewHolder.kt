@@ -14,7 +14,7 @@ class PetViewHolder(binding: PetInventoryBinding, navController: NavController) 
     fun setPet(pet: Pet) {
         bindingItem.tvName.text = pet.name
         bindingItem.tvSymptom.text = pet.symptom
-        bindingItem.tvIndex.text = pet.id.toString()
+        bindingItem.tvIndex.text = "#${pet.id.toString()}"
 
         bindingItem.cvPet.setOnClickListener {
             val bundle = Bundle()
