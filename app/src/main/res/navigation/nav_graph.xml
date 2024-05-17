@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_fragmentMain_to_fragmentDetails"
             app:destination="@id/fragmentDetails"/>
+        <action
+            android:id="@+id/action_fragmentMain_to_fragmentEdit3"
+            app:destination="@id/fragmentEdit" />
     </fragment>
     <fragment
         android:id="@+id/fragmentForm"
@@ -37,11 +40,11 @@
         android:label="FragmentDetails"
         tools:layout = "@layout/fragment_details">
         <action
-            android:id="@+id/action_fragmentDetails_to_fragmentEdit"
-            app:destination="@id/fragmentEdit" />
-        <action
             android:id="@+id/action_fragmentDetails_to_fragmentMain"
             app:destination="@id/fragmentMain" />
+        <action
+            android:id="@+id/action_fragmentDetails_to_fragmentEdit"
+            app:destination="@id/fragmentEdit" />
     </fragment>
 
     <fragment
