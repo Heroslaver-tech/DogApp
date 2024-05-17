@@ -28,7 +28,6 @@ class FragmentDetails : Fragment() {
 //        parentLayout.bringChildToFront(binding.ivPetDetails)
 
         binding = FragmentDetailsBinding.inflate(inflater)
-        binding.lifecycleOwner = this
         return binding.root
     }
 
