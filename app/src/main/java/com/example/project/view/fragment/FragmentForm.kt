@@ -21,6 +21,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
+import com.example.project.webservices.Raza
 
 class FragmentForm : Fragment() {
 
@@ -31,13 +32,18 @@ class FragmentForm : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentFormBinding.inflate(inflater)
+
         return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+       //obtenerRazasDePerro()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         drivers()
-        //observerViewModel()
     }
 
     private fun drivers() {
@@ -95,25 +101,28 @@ class FragmentForm : Fragment() {
     private fun obtenerRazasDePerro() {
         val retroftiTraer = RetrofitClient.consumirApi.getTraer()
 
-        retroftiTraer.enqueue(object : Callback<Raza> {
-            override fun onResponse(call: Call<Raza>, response: Response<Raza>) {
-                val razas = response.body()?.message
+        retroftiTraer.enqueue(object : Callback<List<Raza>> {
+
+            override fun onResponse(call: Call<List<Raza>>, response: Response<List<Raza>>) {
+                val razas = response.body()
 
                 if (razas != null) {
                     mostrarRazasEnTextView(razas)
                 } else {
                     showToast("No se encontraron razas")
                 }
+
+                TODO("Not yet implemented")
             }
 
-            override fun onFailure(call: Call<Raza>, t: Throwable) {
-                showToast("Error al consultar Api Rest")
+            override fun onFailure(call: Call<List<Raza>>, t: Throwable) {
+                showToast("Error al consultar Api Rest: $t")
             }
         })
     }
 
 
-    private fun mostrarRazasEnTextView(razas: String) {
+    private fun mostrarRazasEnTextView(razas: List<Raza>) {
         val properties = razas::class.java.declaredFields
         val keysList = mutableListOf<String>()
 
@@ -125,10 +134,14 @@ class FragmentForm : Fragment() {
             }
         }
 
-        val razasString = keysList.joinToString(separator = "\n")
+        val razasString =  razas.joinToString(separator = "\n") { it.name }
 
-        // Mostrar el listado de razas en el TextView
-        binding.tvMostrar.text = razasString
+       // Mostrar el listado de razas en el TextView
+       // binding.etRace.setText(keysList[0])
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
     }
 
 

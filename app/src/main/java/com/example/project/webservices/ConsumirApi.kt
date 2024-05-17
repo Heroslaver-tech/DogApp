@@ -5,5 +5,5 @@ import retrofit2.http.GET
 
 interface ConsumirApi {
     @GET("dogs")
-    fun getTraer(): Call<Raza>
+    fun getTraer(): Call<List<Raza>>
 }
