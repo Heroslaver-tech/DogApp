@@ -15,11 +15,13 @@ import com.example.project.viewmodel.PetViewModel
 import androidx.lifecycle.Observer
 import androidx.lifecycle.LifecycleOwner
 import com.example.project.webservices.RetrofitClient
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+//import retrofit2.Call
+//import retrofit2.Callback
+//import retrofit2.Response
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
+import androidx.navigation.findNavController
+import com.example.project.R
 import com.example.project.webservices.Raza
 import com.example.project.databinding.FragmentFormBinding
 
@@ -45,6 +47,7 @@ class FragmentForm : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         drivers()
+        goBack()
     }
 
     private fun drivers() {
@@ -109,28 +112,28 @@ class FragmentForm : Fragment() {
     }
 
 
-    private fun obtenerRazasDePerro() {
-        val retroftiTraer = RetrofitClient.consumirApi.getTraer()
-
-        retroftiTraer.enqueue(object : Callback<List<Raza>> {
-
-            override fun onResponse(call: Call<List<Raza>>, response: Response<List<Raza>>) {
-                val razas = response.body()
-
-                if (razas != null) {
-                    mostrarRazasEnTextView(razas)
-                } else {
-                    showToast("No se encontraron razas")
-                }
-
-                TODO("Not yet implemented")
-            }
-
-            override fun onFailure(call: Call<List<Raza>>, t: Throwable) {
-                showToast("Error al consultar Api Rest: $t")
-            }
-        })
-    }
+//    private fun obtenerRazasDePerro() {
+//        val retroftiTraer = RetrofitClient.consumirApi.getTraer()
+//
+//        retroftiTraer.enqueue(object : Callback<List<Raza>> {
+//
+//            override fun onResponse(call: Call<List<Raza>>, response: Response<List<Raza>>) {
+//                val razas = response.body()
+//
+//                if (razas != null) {
+//                    mostrarRazasEnTextView(razas)
+//                } else {
+//                    showToast("No se encontraron razas")
+//                }
+//
+//                TODO("Not yet implemented")
+//            }
+//
+//            override fun onFailure(call: Call<List<Raza>>, t: Throwable) {
+//                showToast("Error al consultar Api Rest: $t")
+//            }
+//        })
+//    }
 
 
     private fun mostrarRazasEnTextView(razas: List<Raza>) {
@@ -155,5 +158,9 @@ class FragmentForm : Fragment() {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
     }
 
-
+    private fun goBack() {
+        binding.toolbarIcon.setOnClickListener {
+            findNavController().popBackStack()
+        }
+    }
 }

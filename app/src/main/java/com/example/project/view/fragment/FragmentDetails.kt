@@ -36,6 +36,7 @@ class FragmentDetails : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         dataInventory()
         controladores()
+        goBack()
     }
 
     private fun controladores() {
@@ -67,4 +68,9 @@ class FragmentDetails : Fragment() {
         findNavController().popBackStack()
     }
 
+    private fun goBack() {
+        binding.toolbarIcon.setOnClickListener {
+            findNavController().popBackStack()
+        }
+    }
 }
