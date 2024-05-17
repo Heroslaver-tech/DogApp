@@ -4,4 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="purple">#D736F4</color>
     <color name="darkGrey">#162326</color>
+    <color name="saveButtonColor">#F05861</color>
+    <color name="pink">#F05861</color>
+    <color name="background">#1E282D</color>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.clase6.Dialogos
+package com.example.project.view.dialog
 
 import android.content.Context
 import android.widget.Toast
