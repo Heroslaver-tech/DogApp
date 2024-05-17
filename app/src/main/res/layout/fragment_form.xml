@@ -2,9 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/backgroundMain"
     android:layout_width="match_parent"
+    android:background="@color/lightgray"
     android:layout_height="match_parent">
+
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -51,7 +52,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilName"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="300dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:hint="Nombre de la Mascota"
@@ -75,7 +76,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilRace"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="300dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:hint="Raza"
@@ -89,7 +90,6 @@
             android:layout_height="wrap_content"
             android:inputType="text"
             android:maxLines="1"
-            android:textColorHint="@android:color/black"
 
             android:background="@drawable/bg_cuadrado"
             android:padding="10dp" />
@@ -99,7 +99,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilNamePerson"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="300dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:hint="Nombre del Propietario"
@@ -112,7 +112,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
-            android:textColorHint="@android:color/black"
             android:maxLines="1"
             android:background="@drawable/bg_cuadrado"
             android:padding="10dp" />
@@ -122,7 +121,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilTel"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="300dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:hint="Teléfono"
@@ -135,8 +134,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="phone"
-            android:textColorHint="@android:color/black"
-
             android:maxLines="1"
             android:maxLength="10"
             android:background="@drawable/bg_cuadrado"
@@ -147,11 +144,10 @@
 
     <Spinner
         android:id="@+id/spSymptom"
-        android:layout_width="300dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:entries="@array/sintomas"
-        android:textColorHint="@android:color/black"
         android:minHeight="48dp"
         android:padding="12dp"
         app:layout_constraintStart_toStartOf="parent"

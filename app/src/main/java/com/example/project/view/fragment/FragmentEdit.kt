@@ -22,7 +22,6 @@ class FragmentEdit : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentEditBinding.inflate(inflater)
-        binding.lifecycleOwner = this
         return binding.root
     }
 
@@ -30,7 +29,7 @@ class FragmentEdit : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         dataInventory()
         controladores()
-//        goBack()
+        goBack()
     }
 
     private fun controladores(){
@@ -60,9 +59,9 @@ class FragmentEdit : Fragment() {
 
     }
 
-//    private fun goBack() {
-//        binding.toolbarIcon.setOnClickListener {
-//            findNavController().popBackStack()
-//        }
-//    }
+    private fun goBack() {
+        binding.toolbarIcon.setOnClickListener {
+            findNavController().popBackStack()
+        }
+    }
 }

@@ -139,7 +139,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnSavePet"
+        android:id="@+id/btnEdit"
         android:layout_width="250dp"
         android:layout_height="58dp"
         android:layout_marginStart="16dp"
