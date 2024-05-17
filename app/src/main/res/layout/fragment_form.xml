@@ -8,104 +8,168 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
+        android:layout_height="69dp"
+        android:background="@drawable/custom_toolbar"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="Nueva Cita" />
+        app:title="">
 
-    <EditText
-        android:id="@+id/etName"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/toolbar_icon"
+                android:layout_width="72dp"
+                android:layout_height="62dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="72dp"
+                android:layout_marginTop="7dp"
+                android:padding="16dp"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Nueva Cita"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilName"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
         android:hint="Nombre de la Mascota"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:theme="@style/AppTheme.InputField"
-        android:layout_width="221dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="40dp"
-        android:imeOptions="actionNext"
-        android:inputType="textPersonName"
-        android:maxLength="15"
-        android:padding="16dp"
-        android:textColor="@android:color/black" />
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            android:maxLength="15"
+            android:background="@drawable/bg_cuadrado"
+            android:padding="10dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
 
-    <EditText
-        android:id="@+id/etRace"
-        android:layout_width="223dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="12dp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilRace"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
         android:hint="Raza"
-        android:imeOptions="actionNext"
-        android:inputType="textVisiblePassword"
-        android:padding="16dp"
-        android:textColor="@android:color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etName"
-        app:theme="@style/AppTheme.InputField" />
+        app:layout_constraintTop_toBottomOf="@id/tilName"
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <EditText
-        android:id="@+id/etNamePerson"
-        android:layout_width="223dp"
-        android:layout_height="59dp"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="8dp"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etRace"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLines="1"
+            android:background="@drawable/bg_cuadrado"
+            android:padding="10dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilNamePerson"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         android:hint="Nombre del Propietario"
-        android:imeOptions="actionNext"
-        android:inputType="textPersonName"
-        android:maxLength="30"
-        android:padding="16dp"
-        android:textColor="@android:color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etRace"
-        app:theme="@style/AppTheme.InputField" />
+        app:layout_constraintTop_toBottomOf="@id/tilRace"
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <EditText
-        android:id="@+id/etTel"
-        android:layout_width="225dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="20dp"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etNamePerson"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLines="1"
+            android:background="@drawable/bg_cuadrado"
+            android:padding="10dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilTel"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         android:hint="Teléfono"
-        android:imeOptions="actionNext"
-        android:inputType="phone"
-        android:maxLength="10"
-        android:padding="16dp"
-        android:textColor="@android:color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etNamePerson"
-        app:theme="@style/AppTheme.InputField" />
+        app:layout_constraintTop_toBottomOf="@id/tilNamePerson"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etTel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:maxLines="1"
+            android:maxLength="10"
+            android:background="@drawable/bg_cuadrado"
+            android:padding="10dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <Spinner
         android:id="@+id/spSymptom"
-        android:layout_width="0dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="12dp"
         android:entries="@array/sintomas"
+        android:minHeight="48dp"
+        android:padding="12dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etTel" />
+        app:layout_constraintTop_toBottomOf="@id/tilTel"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSavePet"
-        android:layout_width="347dp"
+        android:layout_width="250dp"
         android:layout_height="58dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="200dp"
+        app:icon="@drawable/ic_save_24"
+        app:iconPadding="2dp"
         android:text="Guardar"
         android:theme="@style/AppTheme.SaveButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spSymptom" />
+        app:layout_constraintTop_toBottomOf="@id/spSymptom"
+        app:layout_constraintVertical_bias="0.483" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 
