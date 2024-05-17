@@ -14,6 +14,13 @@ import com.example.project.model.Pet
 import com.example.project.viewmodel.PetViewModel
 import androidx.lifecycle.Observer
 import androidx.lifecycle.LifecycleOwner
+import com.example.project.webservices.RetrofitClient
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
+import com.example.project.webservices.Raza
 import com.example.project.databinding.FragmentFormBinding
 
 
@@ -26,13 +33,18 @@ class FragmentForm : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentFormBinding.inflate(inflater)
+
         return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+       //obtenerRazasDePerro()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         drivers()
-        //observerViewModel()
     }
 
     private fun drivers() {
@@ -94,4 +106,53 @@ class FragmentForm : Fragment() {
             }
         }
     }
+
+
+    private fun obtenerRazasDePerro() {
+        val retroftiTraer = RetrofitClient.consumirApi.getTraer()
+
+        retroftiTraer.enqueue(object : Callback<List<Raza>> {
+
+            override fun onResponse(call: Call<List<Raza>>, response: Response<List<Raza>>) {
+                val razas = response.body()
+
+                if (razas != null) {
+                    mostrarRazasEnTextView(razas)
+                } else {
+                    showToast("No se encontraron razas")
+                }
+
+                TODO("Not yet implemented")
+            }
+
+            override fun onFailure(call: Call<List<Raza>>, t: Throwable) {
+                showToast("Error al consultar Api Rest: $t")
+            }
+        })
+    }
+
+
+    private fun mostrarRazasEnTextView(razas: List<Raza>) {
+        val properties = razas::class.java.declaredFields
+        val keysList = mutableListOf<String>()
+
+        for (property in properties) {
+            property.isAccessible = true
+            val propertyName = property.name
+            if (property.type == List::class.java) {
+                keysList.add(propertyName)
+            }
+        }
+
+        val razasString =  razas.joinToString(separator = "\n") { it.name }
+
+       // Mostrar el listado de razas en el TextView
+       // binding.etRace.setText(keysList[0])
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+    }
+
+
 }
