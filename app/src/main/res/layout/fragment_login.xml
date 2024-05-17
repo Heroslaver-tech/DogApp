@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        tools:context=".MainActivity">
+
+        <!-- implementacion JSON con link-->
+        <!--
+       <com.airbnb.lottie.LottieAnimationView
+           android:id="@+id/imagFinger"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           app:lottie_url="https://lottie.host/1e6758b1-3372-42e9-88ee-fca3cd11d23b/r6xEGGZ6ut.json"
+           app:lottie_autoPlay="true"
+           app:lottie_loop="true"
+           tools:ignore="MissingConstraints" />
+-->
+        <!-- implementacion JSON con archivo local-->
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/imagFinger"
+            android:layout_width="252dp"
+            android:layout_height="196dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.757"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/animation"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+           android:id="@+id/tmsg"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text=""
+           android:layout_marginTop="20dp"
+           android:textColor="@color/white"
+           app:layout_constraintTop_toBottomOf="@id/imagFinger"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"/>
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
