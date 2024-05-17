@@ -10,11 +10,12 @@ import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.example.project.databinding.FragmentFormBinding
 import com.example.project.model.Pet
 import com.example.project.viewmodel.PetViewModel
 import androidx.lifecycle.Observer
 import androidx.lifecycle.LifecycleOwner
+import com.example.project.databinding.FragmentFormBinding
+
 
 class FragmentForm : Fragment() {
 
